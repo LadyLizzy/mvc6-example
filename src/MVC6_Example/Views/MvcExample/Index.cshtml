@@ -1,0 +1,32 @@
+﻿@model ExampleViewModel
+@inject IExampleService ExampleService
+
+@{
+    ViewData["Title"] = "Index - Mvc Example";
+}
+
+<h1>Hello World!</h1>
+<input asp-for="@Model.Id" />
+<p>
+    The model has the following first name: @Model.FirstName and last name: @Model.LastName <br />
+    I hid the Id somewhere in the DOM ^_^
+</p>
+
+<p>@ExampleService.ServiceMessage()</p>
+
+<form asp-controller="MvcExample">
+    <input asp-for="Id" />
+    <label asp-for="FirstName"></label>
+    <input asp-for="FirstName" />
+    <br />
+    <label asp-for="LastName"></label>
+    <input asp-for="LastName" />
+    <input type="submit" value="Go!" />
+</form>
+
+<example title="TestTitle" body="TestBody">
+    The example tag will be replaced by a div tag,
+    receive a css class called example and append content after this: <br />
+</example>
+
+<div>@Component.Invoke("Example")</div>

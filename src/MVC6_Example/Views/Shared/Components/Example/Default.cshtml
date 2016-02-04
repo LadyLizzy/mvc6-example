@@ -1,0 +1,9 @@
+﻿@model IEnumerable<ExampleViewModel>
+
+<h3>Example Items</h3>
+<ul>
+    @foreach (var example in Model)
+    {
+        <li>@example.FirstName @example.LastName</li>
+    }
+</ul>
