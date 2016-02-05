@@ -2,7 +2,9 @@
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Mvc.Formatters;
 using Microsoft.Extensions.DependencyInjection;
+using MVC6_Example.Filters;
 using MVC6_Example.Services;
+using MVC6_Example.Services.Implementations;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
@@ -33,6 +35,7 @@ namespace MVC6_Example
             });
 
             services.AddScoped<IExampleService, ExampleService>();
+            services.AddScoped<ExampleFilter>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

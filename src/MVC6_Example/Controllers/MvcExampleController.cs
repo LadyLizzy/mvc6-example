@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNet.Mvc;
+using MVC6_Example.Filters;
 using MVC6_Example.Models;
 
 namespace MVC6_Example.Controllers
 {
+    [ServiceFilter(typeof(ExampleFilter))]
     public class MvcExampleController : Controller
     {
         public IActionResult Index()
